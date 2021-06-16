@@ -8,13 +8,13 @@ public class CoinToss {
 		return result;
 	}
 	
-	static String multipleCoins() {
-		int numFlips = 5;
+	static String multipleCoins(int flips) {
+		int numFlips = flips;
 		System.out.println("Testing " + numFlips + " coin tosses.");
 		double heads = 0;
 		double tails = 0;
 		String finalResult;
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < numFlips; i++) {
 			if(coinToss() >= 0.5) {
 				System.out.println("Heads!");
 				heads += 1;

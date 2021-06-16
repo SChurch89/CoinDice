@@ -25,6 +25,7 @@ public class CoinFrame extends JFrame implements ActionListener {
 	private JPanel contentPane;
 	private JTextPane resultPane;
 	private JTextField numCoinText;
+	private int input;
 
 	/**
 	 * Launch the application.
@@ -61,6 +62,7 @@ public class CoinFrame extends JFrame implements ActionListener {
 		
 		numCoinText = new JTextField();
 		numCoinText.setColumns(10);
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -93,6 +95,7 @@ public class CoinFrame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		CoinToss newCoin = new CoinToss();
-		resultPane.setText(newCoin.multipleCoins());
+		input = Integer.valueOf(numCoinText.getText());
+		resultPane.setText(newCoin.multipleCoins(input));
 	}
 }
